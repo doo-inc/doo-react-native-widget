@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Runtime data
+tmp
+build
+package-lock.json
+
+# Apple garbage
+.DS_Store

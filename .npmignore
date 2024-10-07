@@ -1,0 +1,8 @@
+# Logs
+*.log
+
+# Runtime data
+tmp
+
+# Examples
+example/
