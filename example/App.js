@@ -13,10 +13,10 @@ import {
 const App = () => {
   const [showWidget, toggleWidget] = useState(false);
   const [user, setUser] = useState({
-    identifier: 'testing_user',
-    name: 'Testing User',
+    identifier: 'react_tester',
+    name: 'React Tester',
     avatar_url: 'https://i.pravatar.cc/150?img=12',
-    email: 'test@example.com',
+    email: 'someone@example.com',
     identifier_hash: '',
   });
   const customAttributes = {
@@ -24,7 +24,7 @@ const App = () => {
     pricingPlan: 'paid',
     status: 'active',
   };
-  const websiteToken = 'websiteToken';
+  const websiteToken = 'your_website_token';
   const baseUrl = 'https://cx.doo.ooo';
   const [locale, setLocale] = useState('en');
 
