@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ChatWootWidget from '@chatwoot/react-native-widget';
+import CNTCWidget from './src/App';
 
 import {
   SafeAreaView,
@@ -24,8 +24,8 @@ const App = () => {
     pricingPlan: 'paid',
     status: 'active',
   };
-  const websiteToken = 'RY3LaFtwmkPhDdZVmRd4ektW';
-  const baseUrl = 'https://staging.chatwoot.com';
+  const websiteToken = '7q6ujaw8cnux3A4fGyx2gT8P';
+  const baseUrl = 'https://cx.doo.ooo';
   const [locale, setLocale] = useState('en');
 
   return (
@@ -74,10 +74,10 @@ const App = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => toggleWidget(true)}>
-          <Text style={styles.buttonText}>Open Chatwoot Widget</Text>
+          <Text style={styles.buttonText}>Open CNCT Widget</Text>
         </TouchableOpacity>
       </View>
-      <ChatWootWidget
+      <CNTCWidget
         websiteToken={websiteToken}
         locale={locale}
         baseUrl={baseUrl}

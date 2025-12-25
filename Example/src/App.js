@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, Appearance } from 'react-native';
-import Modal from 'react-native-modal';
+import { SafeAreaView, Appearance, Modal, View, TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { storeHelper, findColors } from './utils';
 import WebView from './WebView';
@@ -37,8 +36,18 @@ const ChatWootWidget = ({
   const [cwCookie, setCookie] = useState('');
 
   useEffect(() => {
+    console.log('=== CNCT Widget Mounted ===');
+    console.log('Modal Visible:', isModalVisible);
+    console.log('Base URL:', baseUrl);
+    console.log('Website Token:', websiteToken);
+    console.log('User:', JSON.stringify(user));
+    console.log('Locale:', locale);
+  }, [isModalVisible, baseUrl, websiteToken, user, locale]);
+
+  useEffect(() => {
     async function fetchData() {
       const value = await storeHelper.getCookie();
+      console.log('Cookie fetched:', value);
       setCookie(value);
     }
     fetchData();
@@ -49,15 +58,22 @@ const ChatWootWidget = ({
     colorScheme,
     appColorScheme,
   });
+  
+  console.log('Rendering modal, visible:', isModalVisible);
+  
   return (
     <Modal
-      backdropColor={COLOR_WHITE}
-      coverScreen
-      isVisible={isModalVisible}
-      onBackButtonPress={closeModal}
-      onBackdropPress={closeModal}
-      style={styles.modal}>
-      <SafeAreaView style={[styles.headerView, { backgroundColor: headerBackgroundColor }]} />
+      visible={isModalVisible}
+      animationType="slide"
+      presentationStyle="pageSheet"
+      onRequestClose={closeModal}>
+      <SafeAreaView style={[styles.headerView, { backgroundColor: headerBackgroundColor }]}>
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-end', padding: 10 }}>
+          <TouchableOpacity onPress={closeModal}>
+            <Text style={{ fontSize: 24, color: '#666' }}>✕</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
       <SafeAreaView style={[styles.mainView, { backgroundColor: mainBackgroundColor }]}>
         <WebView
           websiteToken={websiteToken}
