@@ -249,7 +249,7 @@ Custom attributes can be any key-value pairs that provide additional context abo
 
 ## Supported Languages
 
-The widget supports multiple languages through the Chatwoot platform. Set the `locale` prop to one of the following language codes:
+The widget supports multiple languages through the DOO CNCT platform. Set the `locale` prop to one of the following language codes:
 
 - `'en'` - English (default)
 - `'es'` - Spanish
@@ -642,20 +642,20 @@ export default App;
 
 ## Migration Guide
 
-### From Chatwoot Widget
+### From Previous Widget Versions
 
-If you're migrating from the original Chatwoot widget:
+If you're migrating from an earlier version:
 
 1. Replace package name:
 ```bash
-npm uninstall @chatwoot/react-native-widget
+npm uninstall @doo/cnct-react-native-widget
 npm install @doo/cnct-react-native-widget
 ```
 
 2. Update imports:
 ```javascript
 // Old
-import ChatWootWidget from '@chatwoot/react-native-widget';
+import DooWidget from '@doo/cnct-react-native-widget';
 
 // New
 import CNTCWidget from '@doo/cnct-react-native-widget';
@@ -664,7 +664,7 @@ import CNTCWidget from '@doo/cnct-react-native-widget';
 3. Update component usage:
 ```javascript
 // Old
-<ChatWootWidget {...props} />
+<DooWidget {...props} />
 
 // New
 <CNTCWidget {...props} />
@@ -694,14 +694,14 @@ We welcome contributions! If you find bugs or have feature suggestions:
 
 This widget is proprietary software owned by DOO. Usage is subject to your DOO CNCT subscription terms.
 
-**Based on:** Chatwoot React Native Widget
-**Original License:** MIT License © 2017-2023, Chatwoot Inc
+**Original inspiration:** Open-source chat widget projects
+**License:** Proprietary © 2024, DOO Inc
 
 ## Changelog
 
 ### Version 1.0.0 (Current)
 - Initial release with DOO CNCT branding
-- Full feature parity with Chatwoot widget
+- Complete feature set for customer communication
 - Expo SDK 54 support
 - React Native 0.79.2 compatibility
 - Enhanced stability and performance
