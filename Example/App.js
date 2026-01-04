@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CNTCWidget from './src/App';
+import DooWidget from './src/App';
 
 import {
   SafeAreaView,
@@ -74,10 +74,10 @@ const App = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => toggleWidget(true)}>
-          <Text style={styles.buttonText}>Open CNCT Widget</Text>
+          <Text style={styles.buttonText}>Open DOO Widget</Text>
         </TouchableOpacity>
       </View>
-      <CNTCWidget
+      <DooWidget
         websiteToken={websiteToken}
         locale={locale}
         baseUrl={baseUrl}

@@ -23,7 +23,7 @@ const propTypes = {
   closeModal: PropTypes.func,
 };
 
-const ChatWootWidget = ({
+const DooWidget = ({
   isModalVisible,
   baseUrl,
   websiteToken,
@@ -90,6 +90,6 @@ const ChatWootWidget = ({
   );
 };
 
-ChatWootWidget.propTypes = propTypes;
+DooWidget.propTypes = propTypes;
 
-export default ChatWootWidget;
+export default DooWidget;

@@ -4,7 +4,7 @@ import {
   BG_COLOR_WHITE,
   BG_COLOR_DARK,
   COLOR_WHITE,
-  WOOT_PREFIX,
+  DOO_PREFIX,
   POST_MESSAGE_EVENTS,
 } from './constants';
 
@@ -17,13 +17,13 @@ export const isJsonString = (string) => {
   return true;
 };
 
-export const createWootPostMessage = (object) => {
-  const stringfyObject = `'${WOOT_PREFIX}${JSON.stringify(object)}'`;
+export const createDooPostMessage = (object) => {
+  const stringfyObject = `'${DOO_PREFIX}${JSON.stringify(object)}'`;
   const script = `window.postMessage(${stringfyObject});`;
   return script;
 };
 
-export const getMessage = (data) => data.replace(WOOT_PREFIX, '');
+export const getMessage = (data) => data.replace(DOO_PREFIX, '');
 
 export const generateScripts = ({ colorScheme, user, locale, customAttributes }) => {
   let script = '';
@@ -33,22 +33,22 @@ export const generateScripts = ({ colorScheme, user, locale, customAttributes })
       identifier: user.identifier,
       user,
     };
-    script += createWootPostMessage(userObject);
+    script += createDooPostMessage(userObject);
   }
   if (locale) {
     const localeObject = { event: POST_MESSAGE_EVENTS.SET_LOCALE, locale };
-    script += createWootPostMessage(localeObject);
+    script += createDooPostMessage(localeObject);
   }
   if (customAttributes) {
     const attributeObject = {
       event: POST_MESSAGE_EVENTS.SET_CUSTOM_ATTRIBUTES,
       customAttributes,
     };
-    script += createWootPostMessage(attributeObject);
+    script += createDooPostMessage(attributeObject);
   }
   if (colorScheme) {
-    const themeObject = { event: POST_MESSAGE_EVENTS.SET_COLOR_SCHEME, darkMode: colorScheme };
-    script += createWootPostMessage(themeObject);
+    const themeObject = { event: POST_MESSAGE_EVENTS.SET_COLOR_SCHEME, colorScheme };
+    script += createDooPostMessage(themeObject);
   }
   return script;
 };

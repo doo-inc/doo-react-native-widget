@@ -1,7 +1,7 @@
 {
-  "name": "@chatwoot/react-native-widget",
-  "version": "0.0.21",
-  "description": "React Native widget for Chatwoot",
+  "name": "doo-react-native-widget",
+  "version": "1.0.0",
+  "description": "React Native widget for DOO CNCT",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -40,18 +40,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chatwoot/chatwoot-react-native-widget.git"
+    "url": "git+https://github.com/doo-inc/doo-react-native-widget.git"
   },
   "keywords": [
+    "doo",
+    "cnct",
     "react-native",
-    "chatwoot",
+    "chat",
+    "widget",
     "mobile",
     "ios",
     "android"
   ],
   "bugs": {
-    "url": "https://github.com/chatwoot/chatwoot-react-native-widget/issues"
+    "url": "https://github.com/doo-inc/doo-react-native-widget/issues"
   },
-  "homepage": "https://github.com/chatwoot/chatwoot-react-native-widget#readme",
+  "homepage": "https://github.com/doo-inc/doo-react-native-widget#readme",
   "license": "MIT"
 }
